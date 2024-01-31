@@ -1,0 +1,310 @@
+Título,Autor,Data de Lançamento,Gênero,Quantidade
+"A Guerra dos Tronos",George R. R. Martin,1996,Ficção Fantástica,10
+"1984",George Orwell,1949,Ficção Distópica,15
+"O Senhor dos Anéis",J.R.R. Tolkien,1954,Ficção Fantástica,8
+"Orgulho e Preconceito",Jane Austen,1813,Romance Clássico,12
+"O Código Da Vinci",Dan Brown,2003,Suspense,20
+"Harry Potter e a Pedra Filosofal",J.K. Rowling,1997,Ficção Fantástica,18
+"A Menina que Roubava Livros",Markus Zusak,2005,Drama,5
+"As Crônicas de Nárnia",C.S. Lewis,1950,Ficção Fantástica,10
+"O Pequeno Príncipe",Antoine de Saint-Exupéry,1943,Literatura Infantil,15
+"A Culpa é das Estrelas",John Green,2012,Romance,7
+"Sapiens: Uma Breve História da Humanidade",Yuval Noah Harari,2014,História,10
+"O Alquimista",Paulo Coelho,1988,Ficção Filosófica,25
+"A Revolução dos Bichos",George Orwell,1945,Fábula Política,8
+"Dom Quixote",Miguel de Cervantes,1605,Romance Clássico,10
+"As Aventuras de Sherlock Holmes",Arthur Conan Doyle,1892,Mistério,15
+"O Hobbit",J.R.R. Tolkien,1937,Ficção Fantástica,12
+"O Nome do Vento",Patrick Rothfuss,2007,Ficção Fantástica,9
+"Anna Karenina",Lev Tolstói,1877,Romance Clássico,6
+"Matadouro 5",Kurt Vonnegut,1969,Ficção Científica,10
+"A Revolta de Atlas",Ayn Rand,1957,Ficção Filosófica,13
+"A Divina Comédia",Dante Alighieri,1320,Poesia Épica,10
+"Os Miseráveis",Victor Hugo,1862,Romance Histórico,8
+"Cem Anos de Solidão",Gabriel García Márquez,1967,Realismo Mágico,11
+"O Iluminado",Stephen King,1977,Terror,14
+"O Apanhador no Campo de Centeio",J.D. Salinger,1951,Ficção Contemporânea,9
+"As Vinhas da Ira",John Steinbeck,1939,Romance Social,7
+"Frankenstein",Mary Shelley,1818,Ficção Gótica,10
+"O Médico",Noah Gordon,1986,Romance Histórico,12
+"Guerra e Paz",Lev Tolstói,1869,Romance Histórico,8
+"O Retrato de Dorian Gray",Oscar Wilde,1890,Ficção Gótica,10
+"O Estrangeiro",Albert Camus,1942,Existencialismo,15
+"A Metamorfose",Franz Kafka,1915,Ficção Absurda,6
+"O Grande Gatsby",F. Scott Fitzgerald,1925,Romance Moderno,10
+"Matar um Rouxinol",Harper Lee,1960,Romance Social,9
+"Crime e Castigo",Fiódor Dostoiévski,1866,Romance Psicológico,11
+"O Sol é para Todos",Harper Lee,1960,Romance Social,8
+"Aventuras de Huckleberry Finn",Mark Twain,1884,Aventura,10
+"O Coração das Trevas",Joseph Conrad,1899,Ficção Sombria,14
+"O Jardim Secreto",Frances Hodgson Burnett,1911,Literatura Infantil,10
+"Os Três Mosqueteiros",Alexandre Dumas,1844,Aventura,12
+"A Hora da Estrela",Clarice Lispector,1977,Ficção Contemporânea,7
+"O Silmarillion",J.R.R. Tolkien,1977,Ficção Fantástica,9
+"Ulisses",James Joyce,1922,Modernismo,10
+"A Guerra dos Tronos",George R. R. Martin,1996,Ficção Fantástica,10
+"O Senhor dos Anéis",J.R.R. Tolkien,1954,Ficção Fantástica,8
+"Harry Potter e a Pedra Filosofal",J.K. Rowling,1997,Ficção Fantástica,18
+"As Crônicas de Nárnia",C.S. Lewis,1950,Ficção Fantástica,10
+"O Pequeno Príncipe",Antoine de Saint-Exupéry,1943,Literatura Infantil,15
+"A Culpa é das Estrelas",John Green,2012,Romance,7
+"Sapiens: Uma Breve História da Humanidade",Yuval Noah Harari,2014,História,10
+"A Revolução dos Bichos",George Orwell,1945,Fábula Política,8
+"Dom Quixote",Miguel de Cervantes,1605,Romance Clássico,10
+"As Aventuras de Sherlock Holmes",Arthur Conan Doyle,1892,Mistério,15
+"O Hobbit",J.R.R. Tolkien,1937,Ficção Fantástica,12
+"O Nome do Vento",Patrick Rothfuss,2007,Ficção Fantástica,9
+"Anna Karenina",Lev Tolstói,1877,Romance Clássico,6
+"Matadouro 5",Kurt Vonnegut,1969,Ficção Científica,10
+"A Revolta de Atlas",Ayn Rand,1957,Ficção Filosófica,13
+"A Divina Comédia",Dante Alighieri,1320,Poesia Épica,10
+"Os Miseráveis",Victor Hugo,1862,Romance Histórico,8
+"Cem Anos de Solidão",Gabriel García Márquez,1967,Realismo Mágico,11
+"O Iluminado",Stephen King,1977,Terror,14
+"O Apanhador no Campo de Centeio",J.D. Salinger,1951,Ficção Contemporânea,9
+"As Vinhas da Ira",John Steinbeck,1939,Romance Social,7
+"Frankenstein",Mary Shelley,1818,Ficção Gótica,10
+"O Médico",Noah Gordon,1986,Romance Histórico,12
+"Guerra e Paz",Lev Tolstói,1869,Romance Histórico,8
+"O Retrato de Dorian Gray",Oscar Wilde,1890,Ficção Gótica,10
+"O Estrangeiro",Albert Camus,1942,Existencialismo,15
+"A Metamorfose",Franz Kafka,1915,Ficção Absurda,6
+"O Grande Gatsby",F. Scott Fitzgerald,1925,Romance Moderno,10
+"Matar um Rouxinol",Harper Lee,1960,Romance Social,9
+"Crime e Castigo",Fiódor Dostoiévski,1866,Romance Psicológico,11
+"O Sol é para Todos",Harper Lee,1960,Romance Social,8
+"Aventuras de Huckleberry Finn",Mark Twain,1884,Aventura,10
+"O Coração das Trevas",Joseph Conrad,1899,Ficção Sombria,14
+"O Jardim Secreto",Frances Hodgson Burnett,1911,Literatura Infantil,10
+"Os Três Mosqueteiros",Alexandre Dumas,1844,Aventura,12
+"A Hora da Estrela",Clarice Lispector,1977,Ficção Contemporânea,7
+"O Silmarillion",J.R.R. Tolkien,1977,Ficção Fantástica,9
+"Ulisses",James Joyce,1922,Modernismo,10
+"A Guerra dos Tronos",George R. R. Martin,1996,Ficção Fantástica,10
+"O Senhor dos Anéis",J.R.R. Tolkien,1954,Ficção Fantástica,8
+"Harry Potter e a Pedra Filosofal",J.K. Rowling,1997,Ficção Fantástica,18
+"As Crônicas de Nárnia",C.S. Lewis,1950,Ficção Fantástica,10
+"O Pequeno Príncipe",Antoine de Saint-Exupéry,1943,Literatura Infantil,15
+"A Culpa é das Estrelas",John Green,2012,Romance,7
+"Sapiens: Uma Breve História da Humanidade",Yuval Noah Harari,2014,História,10
+"A Revolução dos Bichos",George Orwell,1945,Fábula Política,8
+"Dom Quixote",Miguel de Cervantes,1605,Romance Clássico,10
+"As Aventuras de Sherlock Holmes",Arthur Conan Doyle,1892,Mistério,15
+"O Hobbit",J.R.R. Tolkien,1937,Ficção Fantástica,12
+"O Nome do Vento",Patrick Rothfuss,2007,Ficção Fantástica,9
+"Anna Karenina",Lev Tolstói,1877,Romance Clássico,6
+"Matadouro 5",Kurt Vonnegut,1969,Ficção Científica,10
+"A Revolta de Atlas",Ayn Rand,1957,Ficção Filosófica,13
+"A Divina Comédia",Dante Alighieri,1320,Poesia Épica,10
+"Os Miseráveis",Victor Hugo,1862,Romance Histórico,8
+"Cem Anos de Solidão",Gabriel García Márquez,1967,Realismo Mágico,11
+"O Iluminado",Stephen King,1977,Terror,14
+"O Apanhador no Campo de Centeio",J.D. Salinger,1951,Ficção Contemporânea,9
+"As Vinhas da Ira",John Steinbeck,1939,Romance Social,7
+"Frankenstein",Mary Shelley,1818,Ficção Gótica,10
+"O Médico",Noah Gordon,1986,Romance Histórico,12
+"Guerra e Paz",Lev Tolstói,1869,Romance Histórico,8
+"O Retrato de Dorian Gray",Oscar Wilde,1890,Ficção Gótica,10
+"O Estrangeiro",Albert Camus,1942,Existencialismo,15
+"A Metamorfose",Franz Kafka,1915,Ficção Absurda,6
+"O Grande Gatsby",F. Scott Fitzgerald,1925,Romance Moderno,10
+"Matar um Rouxinol",Harper Lee,1960,Romance Social,9
+"Crime e Castigo",Fiódor Dostoiévski,1866,Romance Psicológico,11
+"O Sol é para Todos",Harper Lee,1960,Romance Social,8
+"Aventuras de Huckleberry Finn",Mark Twain,1884,Aventura,10
+"O Coração das Trevas",Joseph Conrad,1899,Ficção Sombria,14
+"O Jardim Secreto",Frances Hodgson Burnett,1911,Literatura Infantil,10
+"Os Três Mosqueteiros",Alexandre Dumas,1844,Aventura,12
+"A Hora da Estrela",Clarice Lispector,1977,Ficção Contemporânea,7
+"O Silmarillion",J.R.R. Tolkien,1977,Ficção Fantástica,9
+"Ulisses",James Joyce,1922,Modernismo,10
+"A Guerra dos Tronos",George R. R. Martin,1996,Ficção Fantástica,10
+"O Senhor dos Anéis",J.R.R. Tolkien,1954,Ficção Fantástica,8
+"Harry Potter e a Pedra Filosofal",J.K. Rowling,1997,Ficção Fantástica,18
+"As Crônicas de Nárnia",C.S. Lewis,1950,Ficção Fantástica,10
+"O Pequeno Príncipe",Antoine de Saint-Exupéry,1943,Literatura Infantil,15
+"A Culpa é das Estrelas",John Green,2012,Romance,7
+"Sapiens: Uma Breve História da Humanidade",Yuval Noah Harari,2014,História,10
+"A Revolução dos Bichos",George Orwell,1945,Fábula Política,8
+"Dom Quixote",Miguel de Cervantes,1605,Romance Clássico,10
+"As Aventuras de Sherlock Holmes",Arthur Conan Doyle,1892,Mistério,15
+"O Hobbit",J.R.R. Tolkien,1937,Ficção Fantástica,12
+"O Nome do Vento",Patrick Rothfuss,2007,Ficção Fantástica,9
+"Anna Karenina",Lev Tolstói,1877,Romance Clássico,6
+"Matadouro 5",Kurt Vonnegut,1969,Ficção Científica,10
+"A Revolta de Atlas",Ayn Rand,1957,Ficção Filosófica,13
+"A Divina Comédia",Dante Alighieri,1320,Poesia Épica,10
+"Os Miseráveis",Victor Hugo,1862,Romance Histórico,8
+"Cem Anos de Solidão",Gabriel García Márquez,1967,Realismo Mágico,11
+"O Iluminado",Stephen King,1977,Terror,14
+"O Apanhador no Campo de Centeio",J.D. Salinger,1951,Ficção Contemporânea,9
+"As Vinhas da Ira",John Steinbeck,1939,Romance Social,7
+"Frankenstein",Mary Shelley,1818,Ficção Gótica,10
+"O Médico",Noah Gordon,1986,Romance Histórico,12
+"Guerra e Paz",Lev Tolstói,1869,Romance Histórico,8
+"O Retrato de Dorian Gray",Oscar Wilde,1890,Ficção Gótica,10
+"O Estrangeiro",Albert Camus,1942,Existencialismo,15
+"A Metamorfose",Franz Kafka,1915,Ficção Absurda,6
+"O Grande Gatsby",F. Scott Fitzgerald,1925,Romance Moderno,10
+"Matar um Rouxinol",Harper Lee,1960,Romance Social,9
+"Crime e Castigo",Fiódor Dostoiévski,1866,Romance Psicológico,11
+"O Sol é para Todos",Harper Lee,1960,Romance Social,8
+"Aventuras de Huckleberry Finn",Mark Twain,1884,Aventura,10
+"O Coração das Trevas",Joseph Conrad,1899,Ficção Sombria,14
+"O Jardim Secreto",Frances Hodgson Burnett,1911,Literatura Infantil,10
+"Os Três Mosqueteiros",Alexandre Dumas,1844,Aventura,12
+"A Hora da Estrela",Clarice Lispector,1977,Ficção Contemporânea,7
+"O Silmarillion",J.R.R. Tolkien,1977,Ficção Fantástica,9
+"Ulisses",James Joyce,1922,Modernismo,10
+"A Guerra dos Tronos",George R. R. Martin,1996,Ficção Fantástica,10
+"O Senhor dos Anéis",J.R.R. Tolkien,1954,Ficção Fantástica,8
+"Harry Potter e a Pedra Filosofal",J.K. Rowling,1997,Ficção Fantástica,18
+"As Crônicas de Nárnia",C.S. Lewis,1950,Ficção Fantástica,10
+"O Pequeno Príncipe",Antoine de Saint-Exupéry,1943,Literatura Infantil,15
+"A Culpa é das Estrelas",John Green,2012,Romance,7
+"Sapiens: Uma Breve História da Humanidade",Yuval Noah Harari,2014,História,10
+"A Revolução dos Bichos",George Orwell,1945,Fábula Política,8
+"Dom Quixote",Miguel de Cervantes,1605,Romance Clássico,10
+"As Aventuras de Sherlock Holmes",Arthur Conan Doyle,1892,Mistério,15
+"O Hobbit",J.R.R. Tolkien,1937,Ficção Fantástica,12
+"O Nome do Vento",Patrick Rothfuss,2007,Ficção Fantástica,9
+"Anna Karenina",Lev Tolstói,1877,Romance Clássico,6
+"Matadouro 5",Kurt Vonnegut,1969,Ficção Científica,10
+"A Revolta de Atlas",Ayn Rand,1957,Ficção Filosófica,13
+"A Divina Comédia",Dante Alighieri,1320,Poesia Épica,10
+"Os Miseráveis",Victor Hugo,1862,Romance Histórico,8
+"Cem Anos de Solidão",Gabriel García Márquez,1967,Realismo Mágico,11
+"O Iluminado",Stephen King,1977,Terror,14
+"O Apanhador no Campo de Centeio",J.D. Salinger,1951,Ficção Contemporânea,9
+"As Vinhas da Ira",John Steinbeck,1939,Romance Social,7
+"Frankenstein",Mary Shelley,1818,Ficção Gótica,10
+"O Médico",Noah Gordon,1986,Romance Histórico,12
+"Guerra e Paz",Lev Tolstói,1869,Romance Histórico,8
+"O Retrato de Dorian Gray",Oscar Wilde,1890,Ficção Gótica,10
+"O Estrangeiro",Albert Camus,1942,Existencialismo,15
+"A Metamorfose",Franz Kafka,1915,Ficção Absurda,6
+"O Grande Gatsby",F. Scott Fitzgerald,1925,Romance Moderno,10
+"Matar um Rouxinol",Harper Lee,1960,Romance Social,9
+"Crime e Castigo",Fiódor Dostoiévski,1866,Romance Psicológico,11
+"O Sol é para Todos",Harper Lee,1960,Romance Social,8
+"Aventuras de Huckleberry Finn",Mark Twain,1884,Aventura,10
+"O Coração das Trevas",Joseph Conrad,1899,Ficção Sombria,14
+"O Jardim Secreto",Frances Hodgson Burnett,1911,Literatura Infantil,10
+"Os Três Mosqueteiros",Alexandre Dumas,1844,Aventura,12
+"A Hora da Estrela",Clarice Lispector,1977,Ficção Contemporânea,7
+"O Silmarillion",J.R.R. Tolkien,1977,Ficção Fantástica,9
+"Ulisses",James Joyce,1922,Modernismo,10
+"A Guerra dos Tronos",George R. R. Martin,1996,Ficção Fantástica,10
+"O Senhor dos Anéis",J.R.R. Tolkien,1954,Ficção Fantástica,8
+"Harry Potter e a Pedra Filosofal",J.K. Rowling,1997,Ficção Fantástica,18
+"As Crônicas de Nárnia",C.S. Lewis,1950,Ficção Fantástica,10
+"O Pequeno Príncipe",Antoine de Saint-Exupéry,1943,Literatura Infantil,15
+"A Culpa é das Estrelas",John Green,2012,Romance,7
+"Sapiens: Uma Breve História da Humanidade",Yuval Noah Harari,2014,História,10
+"A Revolução dos Bichos",George Orwell,1945,Fábula Política,8
+"Dom Quixote",Miguel de Cervantes,1605,Romance Clássico,10
+"As Aventuras de Sherlock Holmes",Arthur Conan Doyle,1892,Mistério,15
+"O Hobbit",J.R.R. Tolkien,1937,Ficção Fantástica,12
+"O Nome do Vento",Patrick Rothfuss,2007,Ficção Fantástica,9
+"Anna Karenina",Lev Tolstói,1877,Romance Clássico,6
+"Matadouro 5",Kurt Vonnegut,1969,Ficção Científica,10
+"A Revolta de Atlas",Ayn Rand,1957,Ficção Filosófica,13
+"A Divina Comédia",Dante Alighieri,1320,Poesia Épica,10
+"Os Miseráveis",Victor Hugo,1862,Romance Histórico,8
+"Cem Anos de Solidão",Gabriel García Márquez,1967,Realismo Mágico,11
+"O Iluminado",Stephen King,1977,Terror,14
+"O Apanhador no Campo de Centeio",J.D. Salinger,1951,Ficção Contemporânea,9
+"As Vinhas da Ira",John Steinbeck,1939,Romance Social,7
+"Frankenstein",Mary Shelley,1818,Ficção Gótica,10
+"O Médico",Noah Gordon,1986,Romance Histórico,12
+"Guerra e Paz",Lev Tolstói,1869,Romance Histórico,8
+"O Retrato de Dorian Gray",Oscar Wilde,1890,Ficção Gótica,10
+"O Estrangeiro",Albert Camus,1942,Existencialismo,15
+"A Metamorfose",Franz Kafka,1915,Ficção Absurda,6
+"O Grande Gatsby",F. Scott Fitzgerald,1925,Romance Moderno,10
+"Matar um Rouxinol",Harper Lee,1960,Romance Social,9
+"Crime e Castigo",Fiódor Dostoiévski,1866,Romance Psicológico,11
+"O Sol é para Todos",Harper Lee,1960,Romance Social,8
+"Aventuras de Huckleberry Finn",Mark Twain,1884,Aventura,10
+"O Coração das Trevas",Joseph Conrad,1899,Ficção Sombria,14
+"O Jardim Secreto",Frances Hodgson Burnett,1911,Literatura Infantil,10
+"Os Três Mosqueteiros",Alexandre Dumas,1844,Aventura,12
+"A Hora da Estrela",Clarice Lispector,1977,Ficção Contemporânea,7
+"O Silmarillion",J.R.R. Tolkien,1977,Ficção Fantástica,9
+"Ulisses",James Joyce,1922,Modernismo,10
+"A Guerra dos Tronos",George R. R. Martin,1996,Ficção Fantástica,10
+"O Senhor dos Anéis",J.R.R. Tolkien,1954,Ficção Fantástica,8
+"Harry Potter e a Pedra Filosofal",J.K. Rowling,1997,Ficção Fantástica,18
+"As Crônicas de Nárnia",C.S. Lewis,1950,Ficção Fantástica,10
+"O Pequeno Príncipe",Antoine de Saint-Exupéry,1943,Literatura Infantil,15
+"A Culpa é das Estrelas",John Green,2012,Romance,7
+"Sapiens: Uma Breve História da Humanidade",Yuval Noah Harari,2014,História,10
+"A Revolução dos Bichos",George Orwell,1945,Fábula Política,8
+"Dom Quixote",Miguel de Cervantes,1605,Romance Clássico,10
+"As Aventuras de Sherlock Holmes",Arthur Conan Doyle,1892,Mistério,15
+"O Hobbit",J.R.R. Tolkien,1937,Ficção Fantástica,12
+"O Nome do Vento",Patrick Rothfuss,2007,Ficção Fantástica,9
+"Anna Karenina",Lev Tolstói,1877,Romance Clássico,6
+"Matadouro 5",Kurt Vonnegut,1969,Ficção Científica,10
+"A Revolta de Atlas",Ayn Rand,1957,Ficção Filosófica,13
+"A Divina Comédia",Dante Alighieri,1320,Poesia Épica,10
+"Os Miseráveis",Victor Hugo,1862,Romance Histórico,8
+"Cem Anos de Solidão",Gabriel García Márquez,1967,Realismo Mágico,11
+"O Iluminado",Stephen King,1977,Terror,14
+"O Apanhador no Campo de Centeio",J.D. Salinger,1951,Ficção Contemporânea,9
+"As Vinhas da Ira",John Steinbeck,1939,Romance Social,7
+"Frankenstein",Mary Shelley,1818,Ficção Gótica,10
+"O Médico",Noah Gordon,1986,Romance Histórico,12
+"Guerra e Paz",Lev Tolstói,1869,Romance Histórico,8
+"O Retrato de Dorian Gray",Oscar Wilde,1890,Ficção Gótica,10
+"O Estrangeiro",Albert Camus,1942,Existencialismo,15
+"A Metamorfose",Franz Kafka,1915,Ficção Absurda,6
+"O Grande Gatsby",F. Scott Fitzgerald,1925,Romance Moderno,10
+"Matar um Rouxinol",Harper Lee,1960,Romance Social,9
+"Crime e Castigo",Fiódor Dostoiévski,1866,Romance Psicológico,11
+"O Sol é para Todos",Harper Lee,1960,Romance Social,8
+"Aventuras de Huckleberry Finn",Mark Twain,1884,Aventura,10
+"O Coração das Trevas",Joseph Conrad,1899,Ficção Sombria,14
+"O Jardim Secreto",Frances Hodgson Burnett,1911,Literatura Infantil,10
+"Os Três Mosqueteiros",Alexandre Dumas,1844,Aventura,12
+"A Hora da Estrela",Clarice Lispector,1977,Ficção Contemporânea,7
+"O Silmarillion",J.R.R. Tolkien,1977,Ficção Fantástica,9
+"Ulisses",James Joyce,1922,Modernismo,10
+"A Guerra dos Tronos",George R. R. Martin,1996,Ficção Fantástica,10
+"O Senhor dos Anéis",J.R.R. Tolkien,1954,Ficção Fantástica,8
+"Harry Potter e a Pedra Filosofal",J.K. Rowling,1997,Ficção Fantástica,18
+"As Crônicas de Nárnia",C.S. Lewis,1950,Ficção Fantástica,10
+"O Pequeno Príncipe",Antoine de Saint-Exupéry,1943,Literatura Infantil,15
+"A Culpa é das Estrelas",John Green,2012,Romance,7
+"Sapiens: Uma Breve História da Humanidade",Yuval Noah Harari,2014,História,10
+"A Revolução dos Bichos",George Orwell,1945,Fábula Política,8
+"Dom Quixote",Miguel de Cervantes,1605,Romance Clássico,10
+"As Aventuras de Sherlock Holmes",Arthur Conan Doyle,1892,Mistério,15
+"O Hobbit",J.R.R. Tolkien,1937,Ficção Fantástica,12
+"O Nome do Vento",Patrick Rothfuss,2007,Ficção Fantástica,9
+"Anna Karenina",Lev Tolstói,1877,Romance Clássico,6
+"Matadouro 5",Kurt Vonnegut,1969,Ficção Científica,10
+"A Revolta de Atlas",Ayn Rand,1957,Ficção Filosófica,13
+"A Divina Comédia",Dante Alighieri,1320,Poesia Épica,10
+"Os Miseráveis",Victor Hugo,1862,Romance Histórico,8
+"Cem Anos de Solidão",Gabriel García Márquez,1967,Realismo Mágico,11
+"O Iluminado",Stephen King,1977,Terror,14
+"O Apanhador no Campo de Centeio",J.D. Salinger,1951,Ficção Contemporânea,9
+"As Vinhas da Ira",John Steinbeck,1939,Romance Social,7
+"Frankenstein",Mary Shelley,1818,Ficção Gótica,10
+"O Médico",Noah Gordon,1986,Romance Histórico,12
+"Guerra e Paz",Lev Tolstói,1869,Romance Histórico,8
+"O Retrato de Dorian Gray",Oscar Wilde,1890,Ficção Gótica,10
+"O Estrangeiro",Albert Camus,1942,Existencialismo,15
+"A Metamorfose",Franz Kafka,1915,Ficção Absurda,6
+"O Grande Gatsby",F. Scott Fitzgerald,1925,Romance Moderno,10
+"Matar um Rouxinol",Harper Lee,1960,Romance Social,9
+"Crime e Castigo",Fiódor Dostoiévski,1866,Romance Psicológico,11
+"O Sol é para Todos",Harper Lee,1960,Romance Social,8
+"Aventuras de Huckleberry Finn",Mark Twain,1884,Aventura,10
+"O Coração das Trevas",Joseph Conrad,1899,Ficção Sombria,14
+"O Jardim Secreto",Frances Hodgson Burnett,1911,Literatura Infantil,10
+"Os Três Mosqueteiros",Alexandre Dumas,1844,Aventura,12
+"A Hora da Estrela",Clarice Lispector,1977,Ficção Contemporânea,7
+"O Silmarillion",J.R.R. Tolkien,1977,Ficção Fantástica,9
+"Ulisses",James Joyce,1922,Modernismo,10

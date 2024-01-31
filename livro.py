@@ -1,14 +1,18 @@
 from csv import *
+import datetime
+import unicodedata
+import operator
 
 class Livro:
 
+    #Método que retorna o arquivo csv
     @staticmethod
     def csv_aquivo():
         with open('livros.csv') as arq:
             csv = DictReader(arq)
             return [linha for linha in csv]
 
-
+    #Método para instanciar o objeto com os dados do csv
     @staticmethod
     def csv_arquivo_header(header):
         with open('livros.csv') as arq:
@@ -44,7 +48,8 @@ class Livro:
     def quantidade(self):
         return self.__quantidade
 
-    
+
+    #Cira um novo arquivo na ordem desejada.
     def ordernar(self, decisao):
         with open(f'{decisao}.csv', 'w') as arq:
             cabecalho = [
@@ -68,10 +73,57 @@ class Livro:
                         
                     }
                 )
-            
+
+
+    def listar(self, listar_por, procurar):
+
+        #Cria uma nova lista de dicionarios com as chaves e valores em lowercase e sem acentuação
+        nova_lista = []
+        for livro in Livro.csv_aquivo():
+            nova_lista.append(
+                {unicodedata.normalize(
+                    'NFD', chave.lower()).encode(
+                        'ascii', 'ignore').decode(
+                            'utf-8'): unicodedata.normalize(
+                                'NFD', valor.lower()).encode(
+                                    'ascii', 'ignore').decode(
+                                        'utf-8') for chave, valor in livro.items()})
+        
+        #Criar uma lista filtrando os elementos de acordo com a pesquisa do usuario
+        lista = list(
+            filter(
+                lambda x: unicodedata.normalize(
+                    'NFD', procurar.lower()).encode(
+                        'ascii', 'ignore').decode(
+                            'utf-8') in x[unicodedata.normalize(
+                                'NFD', listar_por.lower()).encode(
+                                    'ascii', 'ignore').decode(
+                                        'utf-8')], nova_lista))
+        
+        return lista
+    
+        
+    def listar_idade(self, idade, operador):
+        operador_dict = {
+            '>': operator.gt,
+            '<': operator.lt,
+            '>=': operator.ge,
+            '<=': operator.le,
+            '==': operator.eq,
+            '!=': operator.ne
+        }
+
+        nova_lista = []
+        for livro in Livro.csv_aquivo():
+            idade_livro = datetime.date.today().year - int(livro['Data de Lançamento'])
+            livro.update({'idade_livro': idade_livro})
+            nova_lista.append(livro)
+
+        return list(filter(lambda x: operador_dict[operador](x['idade_livro'], idade), nova_lista))
+        
 
 a = Livro(
-        Livro.csv_arquivo_header('Título'), 
+        Livro.csv_arquivo_header('Título'),
         Livro.csv_arquivo_header('Autor'), 
         Livro.csv_arquivo_header('Data de Lançamento'), 
         Livro.csv_arquivo_header('Gênero'), 
@@ -79,6 +131,6 @@ a = Livro(
     )
 
 
-print(a.ordernar('Título'))
-a.ordernar('Autor')
-a.ordernar('Data de Lançamento')
+# print(a.listar('Título', 'o hobbit'))
+print(a.listar_idade(180, '=='))
+

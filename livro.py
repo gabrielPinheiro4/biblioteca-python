@@ -110,7 +110,6 @@ class Livro:
             '>=': operator.ge,
             '<=': operator.le,
             '==': operator.eq,
-            '!=': operator.ne
         }
 
         nova_lista = []

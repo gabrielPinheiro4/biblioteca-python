@@ -5,3 +5,19 @@ class Pessoa:
         self.__endereco = endereco
         self.__data_nascimento = data_nascimento
         
+
+    @property
+    def nome(self):
+        return self.__nome_completo
+    
+    @property
+    def cpf(self):
+        return self.__cpf
+    
+    @property
+    def endereco(self):
+        return self.__endereco
+    
+    @property
+    def data_nascimento(self):
+        return self.__data_nascimento

@@ -103,7 +103,7 @@ class Livro:
         return lista
     
         
-    def listar_idade(self, idade, operador):
+    def listar_idade_livro(self, operador, idade):
         operador_dict = {
             '>': operator.gt,
             '<': operator.lt,
@@ -132,5 +132,5 @@ a = Livro(
 
 
 # print(a.listar('Título', 'o hobbit'))
-print(a.listar_idade(180, '=='))
+print(a.listar_idade_livro('==', 180))
 

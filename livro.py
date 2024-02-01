@@ -74,8 +74,8 @@ class Livro:
                     }
                 )
 
-
-    def listar(self, listar_por, procurar):
+    @staticmethod
+    def listar(listar_por, procurar):
 
         #Cria uma nova lista de dicionarios com as chaves e valores em lowercase e sem acentuação
         nova_lista = []
@@ -102,8 +102,8 @@ class Livro:
         
         return lista
     
-        
-    def listar_idade_livro(self, operador, idade):
+    @staticmethod
+    def listar_idade_livro(operador, idade):
         operador_dict = {
             '>': operator.gt,
             '<': operator.lt,
@@ -130,6 +130,6 @@ a = Livro(
     )
 
 
-# print(a.listar('Título', 'o hobbit'))
-print(a.listar_idade_livro('==', 180))
+# print(a.listar('Título', 'o HOBBIT'))
+# print(a.listar_idade_livro('==', 180))
 

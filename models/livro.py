@@ -88,7 +88,8 @@ class Livro:
 
         nova_lista = []
         for livro in csv_aquivo():
-            idade_livro = datetime.date.today().year - int(livro.get('Data de Lançamento'))
+            ano_atual = datetime.date.today().year
+            idade_livro = ano_atual - int(livro.get('Data de Lançamento'))
 
             livro.update({'idade_livro': idade_livro})
             nova_lista.append(livro)

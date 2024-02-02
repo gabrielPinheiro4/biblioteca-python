@@ -1,10 +1,13 @@
 from csv import *
 import datetime
 import operator
-from utils import meu_normalize
-from utils import csv_aquivo
-from utils import cabecalho
-from utils import csv_arquivo_header
+from biblioteca.constants.livro_const import CABECALHO
+from biblioteca.utils.funcoes import (
+    meu_normalize,
+    csv_arquivo_header,
+    csv_aquivo
+)
+ 
 
 class Livro:
 
@@ -36,13 +39,14 @@ class Livro:
         return self.__quantidade
 
 
-    #Cria um novo arquivo na ordem desejada.
+    # Cria um novo arquivo na ordem desejada.
     def ordernar(self, decisao):
         with open(f'{decisao}.csv', 'w') as arq:
-            csv = DictWriter(arq, fieldnames=cabecalho)
+            csv = DictWriter(arq, fieldnames=CABECALHO)
             csv.writeheader()
 
-            linha = sorted(Livro.csv_aquivo(), key=lambda livro: livro.get(decisao))
+            # Cria uma nova lisata de dicionarios, poŕem ordenada com o valor que o usuario passar 
+            linha = sorted(csv_aquivo(), key=lambda livro: livro.get(decisao))
             for i in linha:
                 csv.writerow(
                     {
@@ -58,7 +62,7 @@ class Livro:
     
     def listar(self, listar_por, procurar):
 
-        #Cria uma nova lista de dicionarios com as chaves e valores em lowercase e sem acentuação
+        # Cria uma nova lista de dicionarios com as chaves e valores em lowercase e sem acentuação
         nova_lista = []
         for livro in csv_aquivo():
             nova_lista.append(
@@ -68,7 +72,7 @@ class Livro:
                 }
             )
         
-        #Cria uma lista filtrando os elementos de acordo com a pesquisa do usuario
+        # Cria uma lista filtrando os elementos de acordo com a pesquisa do usuario
         lista = list(
             filter(
                 lambda x: 
@@ -78,6 +82,8 @@ class Livro:
     
     @staticmethod
     def listar_idade_livro(operador, idade):
+        # Cria um dicionario contendo um operador em fortado string e como chave
+        # sua funcionalidade como valor do dicionario 
         operador_dict = {
             '>': operator.gt,
             '<': operator.lt,
@@ -87,16 +93,27 @@ class Livro:
         }
 
         nova_lista = []
+
         for livro in csv_aquivo():
+
+            # Variável contendo o ano atual
             ano_atual = datetime.date.today().year
+
+            # Variável contendo a idade de cada livro
+            # Ano atual - ano do livro
             idade_livro = ano_atual - int(livro.get('Data de Lançamento'))
 
+            # Adiciona uma chave 'idade_livro' para todos os dicionarios contendo
+            # o valor a idade do livro
             livro.update({'idade_livro': idade_livro})
             nova_lista.append(livro)
 
+        # Retorna uma lista com os livros selecionados de acordo com a operação
+        # do usuário
         return list(filter(lambda x: operador_dict.get(operador)(x.get('idade_livro'), idade), nova_lista))
         
 
+# Instanciando o objeto com os dados do arquivo livros.csv
 livro = Livro(
         csv_arquivo_header('Título'),
         csv_arquivo_header('Autor'), 
@@ -104,6 +121,3 @@ livro = Livro(
         csv_arquivo_header('Gênero'), 
         csv_arquivo_header('Quantidade')
     )
-
-# print(livro.listar('titulo', 'o hobbit'))
-print(livro.listar_idade_livro('==', 180))

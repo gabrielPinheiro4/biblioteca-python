@@ -11,8 +11,8 @@ class Usuario(Pessoa):
                  genero_preferido
                  ):
         super().__init__(nome_completo, cpf, endereco, data_nascimento)
-        self.__matricula = str(uuid.uuid4()).split('-')[0]
-        self.__data_matriula = datetime.date.today()
+        self.__matricula = str(uuid.uuid4()).split('-')[0] # Gera uma string aléatoria para a matrícula
+        self.__data_matriula = datetime.date.today() # Adiciona a data atual como data da matrícula
         self.__genero_preferido = genero_preferido
 
     

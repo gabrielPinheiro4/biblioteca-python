@@ -1,5 +1,5 @@
-from csv import *
-from utils import csv_arquivo_biblioteca
+from utils.funcoes import csv_arquivo_biblioteca
+
 
 class Biblioteca:
 
@@ -18,6 +18,7 @@ class Biblioteca:
         return self.__numero
 
     
+# Instanciando o objeto com os dados do arquivo bibliotecas.csv
 biblioteca = Biblioteca(
     csv_arquivo_biblioteca('Nome da Biblioteca'),
     csv_arquivo_biblioteca('Endereço'),

@@ -1,12 +1,15 @@
-from biblioteca import Biblioteca
+from biblioteca import Biblioteca 
 from usuario import Usuario
 from livro import Livro
 from csv import *
-from utils import csv_biblioteca
-from utils import meu_normalize
-from utils import csv_aquivo
-from utils import cabecalho
-from utils import cabecalho_b
+from utils.funcoes import (
+    csv_biblioteca,
+    meu_normalize,
+    csv_aquivo,
+    )
+ 
+from constants.biblioteca_const import CABECALHO_BIBLIOTECA
+from constants.livro_const import CABECALHO
 
 class Emprestimo(Usuario, Livro, Biblioteca):
     def __init__(self, biblioteca, usuario, livro):
@@ -92,7 +95,7 @@ class Emprestimo(Usuario, Livro, Biblioteca):
                     
                     #Sobreescreve o csv atual com a nova lista criada anteriormente
                     with open('livros.csv', 'w') as arq:
-                        csv = DictWriter(arq, fieldnames=cabecalho)
+                        csv = DictWriter(arq, fieldnames=CABECALHO)
                         csv.writeheader()
                         for n in novo_arq:
                             csv.writerow(
@@ -123,7 +126,7 @@ class Emprestimo(Usuario, Livro, Biblioteca):
                     
                     #Sobreescreve o csv atual com a nova lista criada anteriormente
                     with open('bibliotecas.csv', 'w') as arq:
-                        csv = DictWriter(arq, fieldnames=cabecalho_b)
+                        csv = DictWriter(arq, fieldnames=CABECALHO_BIBLIOTECA)
                         csv.writeheader()
                         for n in novo_arq:
                             csv.writerow(
@@ -158,7 +161,7 @@ class Emprestimo(Usuario, Livro, Biblioteca):
                     
                     #Sobreescreve o csv atual com a nova lista criada anteriormente
                     with open('livros.csv', 'w') as arq:
-                        csv = DictWriter(arq, fieldnames=cabecalho)
+                        csv = DictWriter(arq, fieldnames=CABECALHO)
                         csv.writeheader()
                         for n in novo_arq:
                             csv.writerow(
@@ -189,7 +192,7 @@ class Emprestimo(Usuario, Livro, Biblioteca):
                     
                     #Sobreescreve o csv atual com a nova lista criada anteriormente
                     with open('bibliotecas.csv', 'w') as arq:
-                        csv = DictWriter(arq, fieldnames=cabecalho_b)
+                        csv = DictWriter(arq, fieldnames=CABECALHO_BIBLIOTECA)
                         csv.writeheader()
                         for n in novo_arq:
                             csv.writerow(
@@ -204,4 +207,4 @@ class Emprestimo(Usuario, Livro, Biblioteca):
 
 eu = Emprestimo('Biblioteca Técnica de Iguatu', 'tico e teco', '1984')
 eu.cadastrar_usuario('gabriel', '23.2333-09', 'rua 123', '08/092004', 'masculino')
-
+print(eu.emprestimo())

@@ -1,17 +1,12 @@
 from csv import DictReader
 from unicodedata import normalize
 
-#Cabeçalho para escrita do arquivo livros.csv
-cabecalho = ['Título', 'Autor', 'Data de Lançamento','Gênero', 'Quantidade']
-
-#Cabeçalho para escrita do arquivo bibliotecas.csv
-cabecalho_b = ['Nome da Biblioteca', 'Endereço', 'Número', 'Quantidade de Catálogos']
-
 
 #Função que retorna uma lista de dicionarios do arquivo livros.csv
 def csv_aquivo():
     with open('livros.csv') as arq:
         csv = DictReader(arq)
+
         return [linha for linha in csv]
 
 
@@ -19,6 +14,7 @@ def csv_aquivo():
 def csv_arquivo_header(header):
     with open('livros.csv') as arq:
         csv = DictReader(arq)
+
         return [livro[header] for livro in csv]
     
 
@@ -26,6 +22,7 @@ def csv_arquivo_header(header):
 def csv_biblioteca():
     with open('bibliotecas.csv') as arq:
         csv = DictReader(arq)
+
         return [linha for linha in csv]
 
 
@@ -33,6 +30,7 @@ def csv_biblioteca():
 def csv_arquivo_biblioteca(header):
     with open('bibliotecas.csv') as arq:
         csv = DictReader(arq)
+
         return [x[header] for x in csv]
 
 

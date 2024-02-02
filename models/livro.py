@@ -45,8 +45,10 @@ class Livro:
             csv = DictWriter(arq, fieldnames=CABECALHO)
             csv.writeheader()
 
-            # Cria uma nova lisata de dicionarios, poŕem ordenada com o valor que o usuario passar 
+            # Cria uma nova lista de dicionarios, poŕem ordenada com o valor que o usuario passar 
             linha = sorted(csv_aquivo(), key=lambda livro: livro.get(decisao))
+
+            # Escreve no novo arquivo a lista criada anteriormente
             for i in linha:
                 csv.writerow(
                     {

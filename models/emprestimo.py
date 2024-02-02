@@ -30,11 +30,11 @@ class Emprestimo(Usuario, Livro, Biblioteca):
         return self.__livro
 
 
-    #Realiza o cadastro do usuário    
+    # Realiza o cadastro do usuário    
     def cadastrar_usuario(self,nome_completo, cpf,endereco, data_nascimento, genero_preferido):
         super().__init__(nome_completo, cpf,endereco, data_nascimento, genero_preferido)
         
-    #Retorna os dados do usuário
+    # Retorna os dados do usuário
     def mostra_usuario(self):
         return (
             f'Nome: {self.nome}\n'
@@ -47,16 +47,16 @@ class Emprestimo(Usuario, Livro, Biblioteca):
         )
         
     
-    #Retorna os dados da biblioteca selecionada
+    # Retorna os dados da biblioteca selecionada
     def mostrar_biblioteca(self):
-        #Cria uma nova lista de dicionarios em lowercase e sem acentuação do arquivo bibliotecas.csv
+        # Cria uma nova lista de dicionarios em lowercase e sem acentuação do arquivo bibliotecas.csv
         nova_lista_biblioteca = []
         for biblioteca in csv_biblioteca():
             nova_lista_biblioteca.append(
                 {meu_normalize(chave.lower()): 
                  meu_normalize(valor.lower()) for chave, valor in biblioteca.items()})
         
-        ##Criar uma lista filtrando os elementos de acordo com a pesquisa do usuario
+        # Cria uma lista filtrando os elementos de acordo com a pesquisa do usuario
         biblioteca_selecionada = list(
             filter(
                 lambda x: 
@@ -67,33 +67,40 @@ class Emprestimo(Usuario, Livro, Biblioteca):
         return biblioteca_selecionada
 
 
-    #Retorna os dados do livro selecionado
+    # Retorna os dados do livro selecionado
     def mostrar_livro(self):
         return self.listar('titulo', self.livro)
     
 
-    #Método para realizar emprestimo
+    # Método para realizar emprestimo
     def emprestimo(self):
-        #Faz um for para pegar o livro selecionado no arquivo csv, todos em lowercase e sem acento
+
+        # Faz um for para pegar o livro selecionado no arquivo livros.csv, todos em lowercase e sem acento
         for x in csv_aquivo():
             for livro in self.mostrar_livro():
 
+                # Se o livro selecionado for igual ao livro em livro.csv
                 if livro == {
                      meu_normalize(chave.lower()):
                      meu_normalize(valor.lower()) for chave, valor in x.items()}:
                                 
-                    #Cria uma nova lista de dicionarios com os dados alterados após o emprestimo
+                    # Cria uma nova lista de dicionarios com os dados alterados após o emprestimo
                     novo_arq = []
+
                     with open('livros.csv') as arq:
                         csv = DictReader(arq)
                         for linha in csv:
+
+                            # Diminui a quantidade de livro
                             if linha == x:
                                 quantidade_n = int(linha.get('Quantidade'))
                                 quantidade_n -= 1
                                 linha.update({'Quantidade': quantidade_n})
+
+                            # Adiciona os dados alterados na lista
                             novo_arq.append(linha)
                     
-                    #Sobreescreve o csv atual com a nova lista criada anteriormente
+                    # Sobreescreve o csv atual com a nova lista criada anteriormente
                     with open('livros.csv', 'w') as arq:
                         csv = DictWriter(arq, fieldnames=CABECALHO)
                         csv.writeheader()
@@ -106,22 +113,30 @@ class Emprestimo(Usuario, Livro, Biblioteca):
                                 'Quantidade': n.get('Quantidade')}
                             )
 
-        #Faz um for para pegar a biblioteca selecionada no arquivo csv, todos em lowercase e sem acento
+        # Faz um for para pegar a biblioteca selecionada no arquivo bibliotecas.csv, todos em lowercase e sem acento
         for x in csv_biblioteca():
-            for livro in self.mostrar_biblioteca():
-                if livro == {
+            for biblioteca in self.mostrar_biblioteca():
+
+                # Se a biblioteca selecionada for igual a uma biblioteca em bibliotecas.csv 
+                if biblioteca == {
                      meu_normalize(chave.lower()):
                      meu_normalize(valor.lower()) for chave, valor in x.items()}:
 
                     #Cria uma nova lista de dicionarios com os dados alterados após o emprestimo
                     novo_arq = []
+
                     with open('bibliotecas.csv') as arq:
                         csv = DictReader(arq)
+
                         for linha in csv:
                             if linha == x:
+
+                                # Diminui a Quantidade de Catálogos da biblioteca
                                 quantidade_n = int(linha.get('Quantidade de Catálogos'))
                                 quantidade_n -= 1
                                 linha.update({'Quantidade de Catálogos': quantidade_n})
+
+                            # Adiciona os novos dados para a lista
                             novo_arq.append(linha)
                     
                     #Sobreescreve o csv atual com a nova lista criada anteriormente
@@ -139,17 +154,17 @@ class Emprestimo(Usuario, Livro, Biblioteca):
         return 'Emprestimo feito com sucesso'
     
 
-    #Faz a mesma coisa que o metodo 'emprestimo' mas adiciona 1 ao inves de remover
+    #Faz a mesma coisa que o metodo 'emprestimo' mas adiciona 1 à Quantidade ao invés de remover
     def devolver_emprestimo(self):
-        #Faz um for para pegar o livro selecionado no arquivo csv, todos em lowercase e sem acento
+
         for x in csv_aquivo():
             for livro in self.mostrar_livro():
                 if livro == {
                      meu_normalize(chave.lower()):
                      meu_normalize(valor.lower()) for chave, valor in x.items()}:
                                 
-                    #Cria uma nova lista de dicionarios com os dados alterados após o emprestimo
                     novo_arq = []
+
                     with open('livros.csv') as arq:
                         csv = DictReader(arq)
                         for linha in csv:
@@ -159,7 +174,6 @@ class Emprestimo(Usuario, Livro, Biblioteca):
                                 linha.update({'Quantidade': quantidade_n})
                             novo_arq.append(linha)
                     
-                    #Sobreescreve o csv atual com a nova lista criada anteriormente
                     with open('livros.csv', 'w') as arq:
                         csv = DictWriter(arq, fieldnames=CABECALHO)
                         csv.writeheader()
@@ -172,15 +186,14 @@ class Emprestimo(Usuario, Livro, Biblioteca):
                                 'Quantidade': n.get('Quantidade')}
                             )
 
-        #Faz um for para pegar a biblioteca selecionada no arquivo csv, todos em lowercase e sem acento
         for x in csv_biblioteca():
-            for livro in self.mostrar_biblioteca():
-                if livro == {
+            for biblioteca in self.mostrar_biblioteca():
+                if biblioteca == {
                      meu_normalize(chave.lower()):
                      meu_normalize(valor.lower()) for chave, valor in x.items()}:
 
-                    #Cria uma nova lista de dicionarios com os dados alterados após o emprestimo
                     novo_arq = []
+
                     with open('bibliotecas.csv') as arq:
                         csv = DictReader(arq)
                         for linha in csv:
@@ -190,7 +203,6 @@ class Emprestimo(Usuario, Livro, Biblioteca):
                                 linha.update({'Quantidade de Catálogos': quantidade_n})
                             novo_arq.append(linha)
                     
-                    #Sobreescreve o csv atual com a nova lista criada anteriormente
                     with open('bibliotecas.csv', 'w') as arq:
                         csv = DictWriter(arq, fieldnames=CABECALHO_BIBLIOTECA)
                         csv.writeheader()
@@ -205,6 +217,6 @@ class Emprestimo(Usuario, Livro, Biblioteca):
         return 'Emprestimo devolvido com sucesso'
         
 
-eu = Emprestimo('Biblioteca Técnica de Iguatu', 'tico e teco', '1984')
+eu = Emprestimo('Biblioteca Técnica de Iguatu', 'gPinheiro', '1984')
 eu.cadastrar_usuario('gabriel', '23.2333-09', 'rua 123', '08/092004', 'masculino')
-print(eu.emprestimo())
+

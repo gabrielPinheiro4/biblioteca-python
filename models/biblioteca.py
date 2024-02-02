@@ -16,6 +16,14 @@ class Biblioteca:
     @property
     def numero(self):
         return self.__numero
+    
+    @property
+    def endereco(self):
+        return self.__endereco
+    
+    @property
+    def quantidade_catalogo(self):
+        return self.__quantidade_catalogo
 
     
 # Instanciando o objeto com os dados do arquivo bibliotecas.csv

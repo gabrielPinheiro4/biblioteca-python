@@ -1,18 +1,7 @@
 from csv import *
+from utils import csv_arquivo_biblioteca
 
 class Biblioteca:
-
-    @staticmethod
-    def csv_biblioteca():
-        with open('bibliotecas.csv') as arq:
-            csv = DictReader(arq)
-            return [linha for linha in csv]
-
-    @staticmethod
-    def csv_arquivo_biblioteca(header):
-        with open('bibliotecas.csv') as arq:
-            csv = DictReader(arq)
-            return [x[header] for x in csv]
 
     def __init__(self, nome, endereco, numero, quantidade_catalogo):
         self.__nome = nome
@@ -29,11 +18,9 @@ class Biblioteca:
         return self.__numero
 
     
-a = Biblioteca(
-    Biblioteca.csv_arquivo_biblioteca('Nome da Biblioteca'),
-    Biblioteca.csv_arquivo_biblioteca('Endereço'),
-    Biblioteca.csv_arquivo_biblioteca('Número'),
-    Biblioteca.csv_arquivo_biblioteca('Quantidade de Catálogos')
+biblioteca = Biblioteca(
+    csv_arquivo_biblioteca('Nome da Biblioteca'),
+    csv_arquivo_biblioteca('Endereço'),
+    csv_arquivo_biblioteca('Número'),
+    csv_arquivo_biblioteca('Quantidade de Catálogos')
 )
-
-# print(a.numero)

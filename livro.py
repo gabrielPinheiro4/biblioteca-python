@@ -89,7 +89,8 @@ class Livro:
                                     'ascii', 'ignore').decode(
                                         'utf-8') for chave, valor in livro.items()})
         
-        #Criar uma lista filtrando os elementos de acordo com a pesquisa do usuario
+
+        #Cria uma lista filtrando os elementos de acordo com a pesquisa do usuario
         lista = list(
             filter(
                 lambda x: unicodedata.normalize(
@@ -130,6 +131,6 @@ a = Livro(
     )
 
 
-# print(a.listar('Título', 'o HOBBIT'))
+# print(a.listar('título', 'hobbit'))
 # print(a.listar_idade_livro('==', 180))
 

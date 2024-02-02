@@ -1,8 +1,8 @@
 from csv import *
 import datetime
 import operator
-from biblioteca.constants.livro_const import CABECALHO
-from biblioteca.utils.funcoes import (
+from biblioteca_python.constants.livro_const import CABECALHO
+from biblioteca_python.utils.funcoes import (
     meu_normalize,
     csv_arquivo_header,
     csv_aquivo

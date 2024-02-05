@@ -60,7 +60,7 @@ class Emprestimo(Usuario, Livro, Biblioteca):
         biblioteca_selecionada = list(
             filter(
                 lambda x: 
-                meu_normalize(self.biblioteca.lower()) in x['nome da biblioteca'], nova_lista_biblioteca
+                meu_normalize(self.biblioteca.lower()) in x.get('nome da biblioteca'), nova_lista_biblioteca
             )
         )
 

@@ -1,4 +1,4 @@
-from utils.funcoes import csv_arquivo_biblioteca
+from utils.funcoes import lista_aninhada
 
 
 class Biblioteca:
@@ -25,11 +25,18 @@ class Biblioteca:
     def quantidade_catalogo(self):
         return self.__quantidade_catalogo
 
-    
-# Instanciando o objeto com os dados do arquivo bibliotecas.csv
-biblioteca = Biblioteca(
-    csv_arquivo_biblioteca('Nome da Biblioteca'),
-    csv_arquivo_biblioteca('Endereço'),
-    csv_arquivo_biblioteca('Número'),
-    csv_arquivo_biblioteca('Quantidade de Catálogos')
-)
+    # Cria uma lista com os objetos instanciados da classe Biblioteca
+    def selecionar_biblioteca():
+        return [Biblioteca(*lista) for lista in lista_aninhada()]
+                         
+    def __repr__(self):
+        return (
+            f'Nome: {self.nome}\n'
+            f'Número: {self.numero}\n'
+            f'Endereço: {self.endereco}\n'
+            f'Quantidade de Catálogos: {self.quantidade_catalogo}'
+        )
+
+
+biblioteca1, biblioteca2, biblioteca3, biblioteca4 = Biblioteca.selecionar_biblioteca()
+# print(biblioteca1)

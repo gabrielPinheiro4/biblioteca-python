@@ -4,8 +4,7 @@ import operator
 from biblioteca_python.constants.livro_const import CABECALHO
 from biblioteca_python.utils.funcoes import (
     meu_normalize,
-    csv_arquivo_header,
-    csv_aquivo
+    ler_arquivo
 )
  
 
@@ -37,42 +36,16 @@ class Livro:
     @property
     def quantidade(self):
         return self.__quantidade
-
-
-    # Cria um novo arquivo na ordem desejada.
-    def ordernar(self, decisao):
-        with open(f'{decisao}.csv', 'w') as arq:
-            csv = DictWriter(arq, fieldnames=CABECALHO)
-            csv.writeheader()
-
-            # Cria uma nova lista de dicionarios, poŕem ordenada com o valor que o usuario passar 
-            linha = sorted(csv_aquivo(), key=lambda livro: livro.get(decisao))
-
-            # Escreve no novo arquivo a lista criada anteriormente
-            for i in linha:
-                csv.writerow(
-                    {
-                        'Título': i.get('Título'),
-                        'Autor': i.get('Autor'),
-                        'Data de Lançamento': i.get('Data de Lançamento'),
-                        'Gênero': i.get('Gênero'),
-                        'Quantidade': i.get('Quantidade')
-                        
-                    }
-                )
-
     
     def listar(self, listar_por, procurar):
 
         # Cria uma nova lista de dicionarios com as chaves e valores em lowercase e sem acentuação
         nova_lista = []
-        for livro in csv_aquivo():
+        for livro in ler_arquivo('livros.csv'):
             nova_lista.append(
                 {
                     meu_normalize(chave):
-                    meu_normalize(valor) for chave, valor in livro.items()
-                }
-            )
+                    meu_normalize(valor) for chave, valor in livro.items()})
         
         # Cria uma lista filtrando os elementos de acordo com a pesquisa do usuario
         lista = list(
@@ -96,7 +69,7 @@ class Livro:
 
         nova_lista = []
 
-        for livro in csv_aquivo():
+        for livro in ler_arquivo('livros.csv'):
 
             # Variável contendo o ano atual
             ano_atual = datetime.date.today().year
@@ -117,9 +90,11 @@ class Livro:
 
 # Instanciando o objeto com os dados do arquivo livros.csv
 livro = Livro(
-        csv_arquivo_header('Título'),
-        csv_arquivo_header('Autor'), 
-        csv_arquivo_header('Data de Lançamento'), 
-        csv_arquivo_header('Gênero'), 
-        csv_arquivo_header('Quantidade')
+        ler_arquivo('livros.csv', 'Título'),
+        ler_arquivo('livros.csv', 'Autor'), 
+        ler_arquivo('livros.csv', 'Data de Lançamento'), 
+        ler_arquivo('livros.csv', 'Gênero'), 
+        ler_arquivo('livros.csv', 'Quantidade')
     )
+
+# print(livro.titulo)

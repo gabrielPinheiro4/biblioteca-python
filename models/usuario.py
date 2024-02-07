@@ -29,3 +29,15 @@ class Usuario(Pessoa):
     def genero(self):
         return self.__genero_preferido
     
+    # Retorna os dados do usuário
+    def __repr__(self):   
+        return (
+            f'Nome: {self.nome}\n'
+            f'Usuário: {self.usuario}\n'
+            f'CPF: {self.cpf}\n'
+            f'Endereço: {self.endereco}\n'
+            f'Data de Nascimento: {self.data_nascimento}\n'
+            f'Matricula: {self.matricula}', 
+            f'Data da Matricula: {self.data_matricula}\n'
+            f'Gênero: {self.genero}'
+        )

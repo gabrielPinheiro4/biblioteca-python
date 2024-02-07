@@ -1,37 +1,21 @@
-from csv import DictReader
+from csv import DictReader, DictWriter
 from unicodedata import normalize
 
 
 #Função que retorna uma lista de dicionarios do arquivo livros.csv
-def csv_aquivo():
-    with open('livros.csv') as arq:
+def ler_arquivo(arquivo, header = False):
+    with open(arquivo) as arq:
         csv = DictReader(arq)
-
-        return [linha for linha in csv]
-
-
-#Função para instanciar o objeto com os dados do arquivo livros.csv
-def csv_arquivo_header(header):
-    with open('livros.csv') as arq:
-        csv = DictReader(arq)
-
-        return [livro[header] for livro in csv]
+        if not header:
+            return [linha for linha in csv]
+        return [linha.get(header) for linha in csv]
     
 
-#Retorna uma lista de dicionarios com as linhas do arquivo bibliotecas.csv
-def csv_biblioteca():
+def lista_aninhada():
     with open('bibliotecas.csv') as arq:
         csv = DictReader(arq)
 
-        return [linha for linha in csv]
-
-
-#Funcão para instanciar o objeto com so dados do arquivo biblioteca.csv
-def csv_arquivo_biblioteca(header):
-    with open('bibliotecas.csv') as arq:
-        csv = DictReader(arq)
-
-        return [x[header] for x in csv]
+        return [list(linha.values()) for linha in csv]
 
 
 #Função para remover acentuação de strings
@@ -39,3 +23,32 @@ def meu_normalize(variavel):
     normaliza = normalize('NFD', variavel.lower()).encode('ascii', 'ignore')
 
     return normaliza.decode('utf-8')
+
+
+# Escreve no arquivo livro.csv
+def escrita_livro(nova_lista, cabecalho):
+    with open('livros.csv', 'w') as arq:
+        csv = DictWriter(arq, fieldnames=cabecalho)
+        csv.writeheader()
+        for n in nova_lista:
+            csv.writerow(
+                {'Título': n.get('Título'),
+                'Autor': n.get('Autor'),
+                'Data de Lançamento': n.get('Data de Lançamento'),
+                'Gênero': n.get('Gênero'),
+                'Quantidade': n.get('Quantidade')}
+            )
+
+
+# Escreve no arquivo bibliotecas.csv
+def escrita_biblioteca(nova_lista, cabecalho_biblioteca):
+    with open('bibliotecas.csv', 'w') as arq:
+        csv = DictWriter(arq, fieldnames=cabecalho_biblioteca)
+        csv.writeheader()
+        for n in nova_lista:
+            csv.writerow(
+                {'Nome da Biblioteca': n.get('Nome da Biblioteca'),
+                'Endereço': n.get('Endereço'),
+                'Número': n.get('Número'),
+                'Quantidade de Catálogos': n.get('Quantidade de Catálogos')}
+            )

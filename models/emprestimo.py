@@ -13,7 +13,8 @@ from utils.funcoes import (
     meu_normalize,
     escrita_livro,
     escrita_biblioteca,
-    ler_arquivo
+    abrir_arquivo_livro,
+    abrir_arquivo_biblioteca
     )
  
 from constants.biblioteca_const import CABECALHO_BIBLIOTECA
@@ -39,98 +40,93 @@ class Emprestimo(Usuario, Livro, Biblioteca):
         return self.__livro
     
     # Realiza o cadastro do usuário    
-    def cadastrar_usuario(self,nome_completo, cpf,endereco, data_nascimento, genero_preferido):
-        super().__init__(nome_completo, cpf,endereco, data_nascimento, genero_preferido)
+    def cadastrar_usuario(
+            self,
+            nome_completo, 
+            cpf, 
+            endereco, 
+            data_nascimento, 
+            genero_preferido
+            ):
+        super().__init__(
+            nome_completo, 
+            cpf, 
+            endereco, 
+            data_nascimento, 
+            genero_preferido
+            )
         
     # Retorna os dados do livro selecionado
     def mostrar_livro(self):
         return self.listar('titulo', self.livro)
     
-    # Método para realizar emprestimo
     def emprestimo(self):
 
-        # Faz um for para pegar o livro selecionado no arquivo livros.csv
-        for x in ler_arquivo('livros.csv'):
-            for livro in self.mostrar_livro():
-
-                # Se o livro selecionado for igual ao livro em livro.csv
-                if livro == {
-                     meu_normalize(chave.lower()):
-                     meu_normalize(valor.lower()) for chave, valor in x.items()}:
-                                
-                    # Cria uma nova lista
-                    novo_arq = []
-
-                    with open('livros.csv') as arq:
-                        csv = DictReader(arq)
-                        for linha in csv:
-
-                            # Diminui a quantidade de livro
-                            if linha == x:
-                                quantidade_n = int(linha.get('Quantidade'))
-                                quantidade_n -= 1
-                                linha.update({'Quantidade': quantidade_n})
-
-                            # Adiciona os dados alterados na lista criada anteriormente
-                            novo_arq.append(linha)
-                    
-                    # Escreve os dados da lista no arquivo csv
-                    escrita_livro(novo_arq, CABECALHO)
+        # Cria duas listas vazias, uma para as mudanças do arquivo livros.csv
+        # e outra para as mudanças do arquivo bibliotecas.csv
+        novo_arq = []
+        novo_arq_biblioteca = []
         
-        for x in ler_arquivo('bibliotecas.csv'):
-            if self.biblioteca.nome in x.get('Nome da Biblioteca'):
+        # Faz um for em livros.csv
+        for livros in abrir_arquivo_livro:
 
-                novo_arq = []
+            # Se o livro selecionado pelo usuario for igual a um 
+            # livro dentro de livros.csv
+            if self.mostrar_livro()[0] == {
+                    meu_normalize(chave.lower()):
+                    meu_normalize(valor.lower()) for chave, valor in livros.items()}:
+            
+                # Diminui a quantidade do livro no arquivo livros.csv
+                    quantidade_nova = int(livros.get('Quantidade'))
+                    quantidade_nova -= 1
+                    livros.update({'Quantidade': quantidade_nova})
 
-                with open('bibliotecas.csv') as arq:
-                    csv = DictReader(arq)
+            # Adiciona os dados alterados na lista criada anteriormente
+            novo_arq.append(livros)
+            
+            # Sobreescreve os dados do arquivo livros.csv com os dados da
+            # lista
+            escrita_livro(novo_arq, CABECALHO)
+        
+        for bibliotecas in abrir_arquivo_biblioteca:
 
-                    for linha in csv:
-                        if linha == x:
-                            quantidade_n = int(linha.get('Quantidade de Catálogos'))
-                            quantidade_n -= 1
-                            linha.update({'Quantidade de Catálogos': quantidade_n})
-                        novo_arq.append(linha)
-                escrita_biblioteca(novo_arq, CABECALHO_BIBLIOTECA)
+            if self.biblioteca.nome in bibliotecas.get('Nome da Biblioteca'):
+                quantidade_nova = int(bibliotecas.get('Quantidade de Catálogos'))
+                quantidade_nova -= 1
+                bibliotecas.update({'Quantidade de Catálogos': quantidade_nova})
+
+            novo_arq_biblioteca.append(bibliotecas)
+            escrita_biblioteca(novo_arq_biblioteca, CABECALHO_BIBLIOTECA)
 
         return 'Emprestimo feito com sucesso'
     
     def devolver_emprestimo(self):
-        for x in ler_arquivo('livros.csv'):
-            for livro in self.mostrar_livro():
-                if livro == {
-                     meu_normalize(chave.lower()):
-                     meu_normalize(valor.lower()) for chave, valor in x.items()}:
-                    novo_arq = []
-                    with open('livros.csv') as arq:
-                        csv = DictReader(arq)
-                        for linha in csv:
-                            if linha == x:
-                                quantidade_n = int(linha.get('Quantidade'))
-                                quantidade_n += 1
-                                linha.update({'Quantidade': quantidade_n})
-                            novo_arq.append(linha)
-                    
-                    escrita_livro(novo_arq, CABECALHO)
+        novo_arq = []
+        novo_arq_biblioteca = []
+        for livros in abrir_arquivo_livro:
 
-        for x in ler_arquivo('bibliotecas.csv'):
-            if self.biblioteca.nome in x.get('Nome da Biblioteca'):
-                novo_arq = []
+            if self.mostrar_livro()[0] == {
+                    meu_normalize(chave.lower()):
+                    meu_normalize(valor.lower()) for chave, valor in livros.items()}:
+                quantidade_nova = int(livros.get('Quantidade'))
+                quantidade_nova += 1
+                livros.update({'Quantidade': quantidade_nova})
 
-                with open('bibliotecas.csv') as arq:
-                    csv = DictReader(arq)
-                    for linha in csv:
-                        if linha == x:
-                            quantidade_n = int(linha.get('Quantidade de Catálogos'))
-                            quantidade_n += 1
-                            linha.update({'Quantidade de Catálogos': quantidade_n})
-                        novo_arq.append(linha)
-                
-                escrita_biblioteca(novo_arq, CABECALHO_BIBLIOTECA)
+            novo_arq.append(livros)
+            escrita_livro(novo_arq, CABECALHO)
+
+        for bibliotecas in abrir_arquivo_biblioteca:
+
+            if self.biblioteca.nome in bibliotecas.get('Nome da Biblioteca'):
+                quantidade_nova = int(bibliotecas.get('Quantidade de Catálogos'))
+                quantidade_nova += 1
+                bibliotecas.update({'Quantidade de Catálogos': quantidade_nova})
+
+            novo_arq_biblioteca.append(bibliotecas)
+            escrita_biblioteca(novo_arq_biblioteca, CABECALHO_BIBLIOTECA)
 
         return 'Emprestimo devolvido com sucesso'
+
     
-    
-eu = Emprestimo(biblioteca1, 'gPinheiro', '1984')
-eu.cadastrar_usuario('gabriel', '23.2333-09', 'rua 123', '08/092004', 'masculino')
-print(eu.emprestimo())
+gabriel = Emprestimo(biblioteca1, 'gPinheiro', 'a guerra dos tronos')
+gabriel.cadastrar_usuario('gabriel', '23.2333-09', 'rua 123', '08/09/2004', 'masculino')

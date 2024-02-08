@@ -25,7 +25,11 @@ def meu_normalize(variavel):
     return normaliza.decode('utf-8')
 
 
-# Escreve no arquivo livro.csv
+abrir_arquivo_livro = ler_arquivo('livros.csv')
+abrir_arquivo_biblioteca = ler_arquivo('bibliotecas.csv')
+
+
+# Escreve no arquivo livros.csv
 def escrita_livro(nova_lista, cabecalho):
     with open('livros.csv', 'w') as arq:
         csv = DictWriter(arq, fieldnames=cabecalho)

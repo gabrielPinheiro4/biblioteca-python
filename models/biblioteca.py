@@ -39,4 +39,3 @@ class Biblioteca:
 
 
 biblioteca1, biblioteca2, biblioteca3, biblioteca4 = Biblioteca.selecionar_biblioteca()
-# print(biblioteca1)

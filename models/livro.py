@@ -1,12 +1,11 @@
 from csv import *
 import datetime
 import operator
-from biblioteca_python.constants.livro_const import CABECALHO
 from biblioteca_python.utils.funcoes import (
     meu_normalize,
     ler_arquivo
 )
- 
+
 
 class Livro:
 
@@ -39,7 +38,8 @@ class Livro:
     
     def listar(self, listar_por, procurar):
 
-        # Cria uma nova lista de dicionarios com as chaves e valores em lowercase e sem acentuação
+        # Cria uma nova lista de dicionarios do arquivo livros.csv 
+        # com as chaves e valores em lowercase e sem acentuação
         nova_lista = []
         for livro in ler_arquivo('livros.csv'):
             nova_lista.append(
@@ -47,7 +47,8 @@ class Livro:
                     meu_normalize(chave):
                     meu_normalize(valor) for chave, valor in livro.items()})
         
-        # Cria uma lista filtrando os elementos de acordo com a pesquisa do usuario
+        # Cria uma lista filtrando os elementos de acordo com a pesquisa do 
+        # usuario
         lista = list(
             filter(
                 lambda x: 
@@ -57,7 +58,7 @@ class Livro:
     
     @staticmethod
     def listar_idade_livro(operador, idade):
-        # Cria um dicionario contendo um operador em fortado string e como chave
+        # Cria um dicionario contendo um operador em fortado string como chave e
         # sua funcionalidade como valor do dicionario 
         operador_dict = {
             '>': operator.gt,
@@ -96,5 +97,3 @@ livro = Livro(
         ler_arquivo('livros.csv', 'Gênero'), 
         ler_arquivo('livros.csv', 'Quantidade')
     )
-
-# print(livro.titulo)

@@ -4,7 +4,6 @@ class Pessoa:
         self.__cpf = cpf
         self.__endereco = endereco
         self.__data_nascimento = data_nascimento
-        
 
     @property
     def nome(self):

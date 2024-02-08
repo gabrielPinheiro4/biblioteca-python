@@ -2,6 +2,7 @@ from pessoa import Pessoa
 import uuid
 import datetime
 
+
 class Usuario(Pessoa):
     def __init__(self, 
                  nome_completo, 
@@ -11,11 +12,13 @@ class Usuario(Pessoa):
                  genero_preferido
                  ):
         super().__init__(nome_completo, cpf, endereco, data_nascimento)
-        self.__matricula = str(uuid.uuid4()).split('-')[0] # Gera uma string aléatoria para a matrícula
-        self.__data_matriula = datetime.date.today() # Adiciona a data atual como data da matrícula
-        self.__genero_preferido = genero_preferido
 
-    
+        # Gera uma string aléatoria para a matrícula
+        self.__matricula = str(uuid.uuid4()).split('-')[0]
+
+         # Adiciona a data atual como data da matrícula
+        self.__data_matriula = datetime.date.today()
+        self.__genero_preferido = genero_preferido
     
     @property
     def matricula(self):
@@ -37,7 +40,7 @@ class Usuario(Pessoa):
             f'CPF: {self.cpf}\n'
             f'Endereço: {self.endereco}\n'
             f'Data de Nascimento: {self.data_nascimento}\n'
-            f'Matricula: {self.matricula}', 
+            f'Matricula: {self.matricula} '
             f'Data da Matricula: {self.data_matricula}\n'
             f'Gênero: {self.genero}'
-        )
+)

@@ -24,8 +24,10 @@ def meu_normalize(variavel):
 
     return normaliza.decode('utf-8')
 
-
+# Variável para abrir o arquivo livros.csv
 abrir_arquivo_livro = ler_arquivo('livros.csv')
+
+# Variável para abrir o arquivo bibliotecas.csv
 abrir_arquivo_biblioteca = ler_arquivo('bibliotecas.csv')
 
 

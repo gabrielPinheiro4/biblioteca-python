@@ -1,4 +1,4 @@
-from utils.funcoes import lista_aninhada
+from utils.funcoes import ler_arquivo
 
 
 class Biblioteca:
@@ -27,7 +27,9 @@ class Biblioteca:
 
     # Cria uma lista com os objetos instanciados da classe Biblioteca
     def selecionar_biblioteca():
-        return [Biblioteca(*lista) for lista in lista_aninhada()]
+        return [
+            Biblioteca(*lista) for lista in ler_arquivo('bibliotecas.csv', aninhada=True)
+        ]
                          
     def __repr__(self):
         return (

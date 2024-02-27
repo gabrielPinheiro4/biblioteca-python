@@ -1,13 +1,6 @@
 from csv import DictReader, DictWriter
 from unicodedata import normalize
-from constants.livro_const import (
-    ABRIR_ARQUIVO_LIVRO,
-    CABECALHO
-)
-from constants.biblioteca_const import (
-    ABRIR_ARQUIVO_BIBLIOTECA,
-    CABECALHO_BIBLIOTECA
-)
+
 
 
 # Função para ler os arquivos livros.csv e bibliotecas.csv
@@ -64,38 +57,3 @@ def escrita_biblioteca(nova_lista, cabecalho_biblioteca):
                 'Número': n.get('Número'),
                 'Quantidade de Catálogos': n.get('Quantidade de Catálogos')}
             )
-
-
-def faz_emprestimo_devolucao(eh_emprestimo=False, eh_devolucao=False, livro=False, biblioteca=False):
-    novo_arq = []
-    novo_arq_biblioteca = []
-
-    for livros in ABRIR_ARQUIVO_LIVRO:
-        for bibliotecas in ABRIR_ARQUIVO_BIBLIOTECA:
-            if livro == {
-                meu_normalize(chave.lower()):
-                meu_normalize(valor.lower()) for chave, valor in livros.items()
-            } and biblioteca in bibliotecas.get('Nome da Biblioteca'):
-                
-                if eh_emprestimo:
-                    quantidade_nova = int(livros.get('Quantidade'))
-                    quantidade_nova -= 1
-                    livros.update({'Quantidade': quantidade_nova})
-
-                    quantidade_nova_b = int(bibliotecas.get('Quantidade de Catálogos'))
-                    quantidade_nova_b -= 1
-                    bibliotecas.update({'Quantidade de Catálogos': quantidade_nova_b})
-
-                if eh_devolucao:
-                    quantidade_nova = int(livros.get('Quantidade'))
-                    quantidade_nova += 1
-                    livros.update({'Quantidade': quantidade_nova})
-
-                    quantidade_nova_b = int(bibliotecas.get('Quantidade de Catálogos'))
-                    quantidade_nova_b += 1
-                    bibliotecas.update({'Quantidade de Catálogos': quantidade_nova_b})
-
-                novo_arq.append(livros)
-                novo_arq_biblioteca.append(bibliotecas)
-            escrita_livro(novo_arq, CABECALHO)
-            escrita_biblioteca(novo_arq_biblioteca, CABECALHO_BIBLIOTECA)

@@ -1,9 +1,6 @@
 from biblioteca import (
     Biblioteca, 
     biblioteca1,
-    biblioteca2,
-    biblioteca3,
-    biblioteca4
     )
 
 from usuario import Usuario
@@ -59,18 +56,13 @@ class Emprestimo(Usuario, Livro, Biblioteca):
             genero_preferido
             )
         
-    # Retorna os dados do livro selecionado
     def mostrar_livro(self):
+        # Retorna os dados do livro selecionado
         return self.listar('titulo', self.livro)
     
-    def emprestimo(self):
-
-        # Cria duas listas vazias, uma para as mudanças do arquivo livros.csv
-        # e outra para as mudanças do arquivo bibliotecas.csv
+    def gera_nova_lista_livro(self, devolucao=False):
         novo_arq = []
-        novo_arq_biblioteca = []
-        
-        # Faz um for em livros.csv
+
         for livros in ABRIR_ARQUIVO_LIVRO:
 
             # Se o livro selecionado pelo usuario for igual a um 
@@ -79,6 +71,12 @@ class Emprestimo(Usuario, Livro, Biblioteca):
                 meu_normalize(chave.lower()):
                 meu_normalize(valor.lower()) for chave, valor in livros.items()
             }:
+                if devolucao:
+                    quantidade_nova = int(livros.get('Quantidade'))
+                    quantidade_nova += 1
+                    livros.update({'Quantidade': quantidade_nova})
+
+                if not devolucao:
 
                 # Diminui a quantidade do livro no arquivo livros.csv
                     quantidade_nova = int(livros.get('Quantidade'))
@@ -87,53 +85,46 @@ class Emprestimo(Usuario, Livro, Biblioteca):
 
             # Adiciona os dados alterados na lista criada anteriormente
             novo_arq.append(livros)
-            
-        # Sobreescreve os dados do arquivo livros.csv com os dados da lista
-        escrita_livro(novo_arq, CABECALHO)
         
-        for bibliotecas in ABRIR_ARQUIVO_BIBLIOTECA:
-
-            if self.biblioteca.nome in bibliotecas.get('Nome da Biblioteca'):
-
-                quantidade_nova = int(bibliotecas.get('Quantidade de Catálogos'))
-                quantidade_nova -= 1
-                bibliotecas.update({'Quantidade de Catálogos': quantidade_nova})
-
-            novo_arq_biblioteca.append(bibliotecas)
-        escrita_biblioteca(novo_arq_biblioteca, CABECALHO_BIBLIOTECA)
-
-        return 'Emprestimo feito com sucesso'
+        return novo_arq
     
-    def devolver_emprestimo(self):
-        novo_arq = []
+
+    def gera_nova_lista_biblioteca(self, devolucao=False):
         novo_arq_biblioteca = []
-        
-        for livros in ABRIR_ARQUIVO_LIVRO:
-
-            if self.mostrar_livro()[0] == {
-                meu_normalize(chave.lower()):
-                meu_normalize(valor.lower()) for chave, valor in livros.items()
-            }:
-                quantidade_nova = int(livros.get('Quantidade'))
-                quantidade_nova += 1
-                livros.update({'Quantidade': quantidade_nova})
-
-            novo_arq.append(livros)
-        escrita_livro(novo_arq, CABECALHO)
 
         for bibliotecas in ABRIR_ARQUIVO_BIBLIOTECA:
 
             if self.biblioteca.nome in bibliotecas.get('Nome da Biblioteca'):
 
-                quantidade_nova = int(bibliotecas.get('Quantidade de Catálogos'))
-                quantidade_nova += 1
-                bibliotecas.update({'Quantidade de Catálogos': quantidade_nova})
+                if devolucao:
+                    quantidade_nova = int(bibliotecas.get('Quantidade de Catálogos'))
+                    quantidade_nova += 1
+                    bibliotecas.update({'Quantidade de Catálogos': quantidade_nova})
+
+                if not devolucao:
+                    quantidade_nova = int(bibliotecas.get('Quantidade de Catálogos'))
+                    quantidade_nova -= 1
+                    bibliotecas.update({'Quantidade de Catálogos': quantidade_nova})
 
             novo_arq_biblioteca.append(bibliotecas)
-        escrita_biblioteca(novo_arq_biblioteca, CABECALHO_BIBLIOTECA)
-
-        return 'Livro devolvido com sucesso'
-
+        
+        return novo_arq_biblioteca
     
+    def emprestimo_devolucao(self, eh_devolucao=False, eh_emprestimo=False):
+
+        if eh_emprestimo:
+            escrita_livro(self.gera_nova_lista_livro(), CABECALHO)
+            escrita_biblioteca(self.gera_nova_lista_biblioteca(), CABECALHO_BIBLIOTECA)
+
+            return 'Emprestimo feito com sucesso'
+
+        if eh_devolucao:
+            escrita_livro(self.gera_nova_lista_livro(True), CABECALHO)
+            escrita_biblioteca(self.gera_nova_lista_biblioteca(True), CABECALHO_BIBLIOTECA)
+
+            return 'Devolução feita com sucesso'
+    
+
 gabriel = Emprestimo(biblioteca1, 'gPinheiro', 'a guerra dos tronos')
 gabriel.cadastrar_usuario('gabriel', '23.2333-09', 'rua 123', '08/09/2004', 'masculino')
+print(gabriel.emprestimo_devolucao(eh_emprestimo=True))

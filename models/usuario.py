@@ -43,4 +43,4 @@ class Usuario(Pessoa):
             f'Matricula: {self.matricula} '
             f'Data da Matricula: {self.data_matricula}\n'
             f'Gênero: {self.genero}'
-)
+        )

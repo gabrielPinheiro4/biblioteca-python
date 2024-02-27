@@ -2,7 +2,6 @@ from csv import DictReader, DictWriter
 from unicodedata import normalize
 
 
-
 # Função para ler os arquivos livros.csv e bibliotecas.csv
 def ler_arquivo(arquivo, header=False, aninhada=False):
     with open(arquivo) as arq:
